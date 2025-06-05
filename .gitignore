@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# PyCharm settings (if using)
+.idea/
+
+# dotenv files
+.env
+.env.*
+
+# Logs
+*.log
+
+# Other
+.DS_Store
