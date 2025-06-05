@@ -39,13 +39,36 @@ utils.py                 # Вспомогательные функции
 
 ## Установка
 
-1️⃣ Установить зависимости:
+1️⃣ Клонируем репозиторий:
+
+```bash
+git clone https://github.com/EndoTouma/allure-testops-telegram-bot.git
+cd allure-testops-telegram-bot
+```
+
+2️⃣ (Опционально) Создаём и активируем virtualenv:
+
+- Windows:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+- Linux / macOS:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+3️⃣ Устанавливаем зависимости:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-2️⃣ Настроить `.env` (пример ниже):
+4️⃣ Настраиваем `.env` (по образцу `.env.example`):
 
 ```env
 # Настройки Allure TestOps API
@@ -66,11 +89,9 @@ MONGO_COLLECTION=projects
 
 # Уровень логирования (DEBUG / INFO / WARNING / ERROR)
 LOG_LEVEL=INFO
-
-
 ```
 
-3️⃣ Запустить бота:
+5️⃣ Запускаем бота:
 
 ```bash
 python bot.py
@@ -144,13 +165,36 @@ utils.py                 # Utility functions
 
 ## Installation
 
-1️⃣ Install dependencies:
+11️⃣ Clone the repository:
+
+```bash
+git clone https://github.com/EndoTouma/allure-testops-telegram-bot.git
+cd allure-testops-telegram-bot
+```
+
+2️⃣ (Optional but recommended) Create and activate a virtual environment:
+
+- Windows:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+- Linux / macOS:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+3️⃣ Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-2️⃣ Configure `.env`:
+4️⃣ Configure `.env`:
 
 ```env
 # Allure TestOps API settings
@@ -171,10 +215,9 @@ MONGO_COLLECTION=projects
 
 # Logging level (DEBUG / INFO / WARNING / ERROR)
 LOG_LEVEL=INFO
-
 ```
 
-3️⃣ Run the bot:
+5️⃣ Run the bot:
 
 ```bash
 python bot.py
