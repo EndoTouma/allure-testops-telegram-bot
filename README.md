@@ -122,6 +122,10 @@ python bot.py
 * Отправляет результат по завершению
 * Использует полностью асинхронный API, эффективен по ресурсам
 
+## Благодарности
+
+- Этот проект использует [Allure TestOps API](https://qameta.io/product/testops/) для взаимодействия с платформой Allure TestOps.
+- Allure TestOps — продукт компании Qameta Software.
 ---
 
 # Allure TestOps Telegram Bot (English)
@@ -247,6 +251,11 @@ Admin commands (`OWNER_USERNAME`):
 * Status check every 30 seconds
 * Sends result upon completion
 * Uses fully asynchronous API & is resource-efficient
+
+## Acknowledgements
+
+- This project uses the [Allure TestOps API](https://qameta.io/product/testops/) to interact with Allure TestOps platform.
+- Allure TestOps is a product of Qameta Software.
 
 ## License
 
