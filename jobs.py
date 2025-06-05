@@ -1,12 +1,14 @@
 import logging
+
 from telegram import ReplyKeyboardRemove
+from telegram.constants import ParseMode
 from telegram.ext import ContextTypes
 
 import testops_client as toc
 from keyboards import REPLY_MENU
-from telegram.constants import ParseMode
 
 logger = logging.getLogger(__name__)
+
 
 async def check_launch_result(context: ContextTypes.DEFAULT_TYPE) -> None:
     """

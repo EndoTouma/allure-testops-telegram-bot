@@ -21,7 +21,6 @@ try:
 except mongo_errors.PyMongoError as e:
     logger.warning(f"Не удалось создать индекс для projects: {e}")
 
-# индексируем поле "username" вместо "user_id"
 try:
     allowed_col.create_index([("username", 1)], unique=True)
 except mongo_errors.PyMongoError as e:

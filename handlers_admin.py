@@ -8,8 +8,7 @@ from db import add_allowed_user, remove_allowed_user, list_allowed_users
 
 logger = logging.getLogger(__name__)
 
-# Ваш Telegram username (без @), который имеет право выдавать/снимать доступ
-OWNER_USERNAME = os.getenv("OWNER_USERNAME")  # <- Замените на ваш username без символа @
+OWNER_USERNAME = os.getenv("OWNER_USERNAME")
 
 
 async def allow_user(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:

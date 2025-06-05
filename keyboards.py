@@ -1,4 +1,3 @@
-import re
 from typing import Any, Dict, List, Optional, Tuple
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup
@@ -20,6 +19,7 @@ REPLY_MENU = ReplyKeyboardMarkup(
     one_time_keyboard=True,
     resize_keyboard=True,
 )
+
 
 # --------------------- Построение Inline-клавиатур ---------------------
 def build_projects_inline(projects: List[Dict]) -> InlineKeyboardMarkup:
@@ -62,33 +62,31 @@ def build_jobs_inline(jobs: List[Dict], project_id: int) -> InlineKeyboardMarkup
 
 
 def build_params_inline(
-    params: List[Dict],
-    collected: Dict[str, Any],
-    project_id: int,
-    job_id: int,
+        params: List[Dict],
+        collected: Dict[str, Any],
+        project_id: int,
+        job_id: int,
 ) -> Tuple[str, Optional[InlineKeyboardMarkup]]:
-    # Находим первый не заполненный параметр
     next_param = None
     for p in params:
         key = p.get("name")
         if key not in collected:
             next_param = p
             break
-
+    
     lines = [f"• {k} = {v}" for k, v in collected.items()]
     chosen_text = "\n".join(lines) if lines else "• (пока ничего не указано)"
-
+    
     if not next_param:
-        # Все параметры заполнены — переходим к вводу имени запуска
         header = (
             f"📋 Параметры заполнены:\n{chosen_text}\n\n"
             f"Отправьте имя запуска (до 100 символов):"
         )
-        return header, None  # None — значит ожидаем текстовый ввод имени запуска
-
+        return header, None
+    
     key = next_param.get("name", "")
     default = next_param.get("defaultValue", "")
-
+    
     header = (
         f"📋 Заполнено:\n{chosen_text}\n\n"
         f"Введите значение для «{key}» или используйте одну из кнопок:\n"
