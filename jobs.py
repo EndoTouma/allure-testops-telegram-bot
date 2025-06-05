@@ -5,6 +5,7 @@ from telegram.constants import ParseMode
 from telegram.ext import ContextTypes
 
 import testops_client as toc
+import time
 from keyboards import REPLY_MENU
 
 logger = logging.getLogger(__name__)
