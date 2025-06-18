@@ -79,8 +79,8 @@ USER_TOKEN=your_testops_api_token
 # Настройки Telegram-бота
 TELEGRAM_BOT_TOKEN=your_telegram_bot_token
 
-# Telegram username владельца бота (без символа @)
-OWNER_USERNAME=your_admin_telegram_username
+# Telegram username администраторов бота (без символа @)
+OWNER_USERNAMES="your_admin_telegram_username", "another_admin_telegram_username"
 
 # Настройки MongoDB
 MONGO_URI=mongodb://localhost:27017
@@ -109,7 +109,7 @@ python bot.py
 
 Только пользователи из белого списка могут запускать Job'ы.
 
-Админ-команды (`OWNER_USERNAME`):
+Админ-команды (`OWNER_USERNAMES`):
 
 * `/allow_user username` — разрешить пользователю
 * `/disallow_user username` — удалить из белого списка
@@ -209,8 +209,8 @@ USER_TOKEN=your_testops_api_token
 # Telegram bot settings
 TELEGRAM_BOT_TOKEN=your_telegram_bot_token
 
-# Telegram username of the bot owner (without @)
-OWNER_USERNAME=your_admin_telegram_username
+# Telegram usernames of the bot admins (without @)
+OWNER_USERNAMES="your_admin_telegram_username", "another_admin_telegram_username"
 
 # MongoDB settings
 MONGO_URI=mongodb://localhost:27017
@@ -239,7 +239,7 @@ python bot.py
 
 Only users from the whitelist can run Jobs.
 
-Admin commands (`OWNER_USERNAME`):
+Admin commands (`OWNER_USERNAMES`):
 
 * `/allow_user username` — allow a user
 * `/disallow_user username` — remove from whitelist

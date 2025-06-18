@@ -7,7 +7,7 @@ USER_TOKEN=your_testops_api_token
 TELEGRAM_BOT_TOKEN=your_telegram_bot_token
 
 # Telegram username владельца бота (без символа @)
-OWNER_USERNAME=your_admin_telegram_username
+OWNER_USERNAMES="your_admin_telegram_username", "another_admin_telegram_username"
 
 # Настройки MongoDB
 MONGO_URI=mongodb://localhost:27017
