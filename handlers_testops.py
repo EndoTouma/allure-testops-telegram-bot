@@ -769,6 +769,13 @@ async def text_message_handler(update: Update, context: ContextTypes.DEFAULT_TYP
             return await update.message.reply_text(
                 "Операция отменена.", reply_markup=MAIN_REPLY_KB
             )
+            
+        # 4) Текст «Меню»
+        if normalized == "меню":
+            user_data.clear()
+            return await update.message.reply_text(
+                "Воспользуйтесь кнопками главного меню ниже.", reply_markup=MAIN_REPLY_KB
+            )
         
         # 5) Нераспознанное сообщение
         return await update.message.reply_text(
