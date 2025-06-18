@@ -1,5 +1,6 @@
 import logging
 import os
+import sys
 
 from dotenv import load_dotenv
 from telegram.ext import (
@@ -15,7 +16,12 @@ load_dotenv()
 
 # --------------------- Логирование ---------------------
 logging.basicConfig(
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
+    level=logging.DEBUG,  # ставим DEBUG, чтобы ловить всё
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.StreamHandler(sys.stdout),           # вывод в консоль
+        logging.FileHandler("bot.log", encoding="utf-8")  # и в файл bot.log
+    ]
 )
 logger = logging.getLogger(__name__)
 
