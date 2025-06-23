@@ -244,9 +244,8 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
             # Удаляем «черновик» запуска, если он был
             context.user_data.pop("pending_launch", None)
             
-            await query.edit_message_text(
-                "❌ Операция отменена.",
-                reply_markup=MAIN_REPLY_KB
+            await update.callback_query.message.reply_text(
+                "❌ Операция отменена.", reply_markup=MAIN_REPLY_KB
             )
             return
         
@@ -770,14 +769,14 @@ async def text_message_handler(update: Update, context: ContextTypes.DEFAULT_TYP
                 "Операция отменена.", reply_markup=MAIN_REPLY_KB
             )
             
-        # 4) Текст «Меню»
+        # 5) Текст «Меню»
         if normalized == "меню":
             user_data.clear()
             return await update.message.reply_text(
                 "Воспользуйтесь кнопками главного меню ниже.", reply_markup=MAIN_REPLY_KB
             )
         
-        # 5) Нераспознанное сообщение
+        # 7) Нераспознанное сообщение
         return await update.message.reply_text(
             "⚠️ Я не понял запрос. Воспользуйтесь кнопками главного меню ниже.",
             reply_markup=MAIN_REPLY_KB,
